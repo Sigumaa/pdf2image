@@ -1,4 +1,4 @@
-package main
+package pdf2image
 
 import (
 	"fmt"
@@ -9,28 +9,7 @@ import (
 	"github.com/gen2brain/go-fitz"
 )
 
-type Name struct {
-	PdfName string
-	ImgName string
-}
-
-func main() {
-	if len(os.Args) != 3 {
-		panic("The number of arguments does not match.")
-	}
-
-	pdfName := os.Args[1]
-	imgName := os.Args[2]
-
-	pi := Name{PdfName: pdfName, ImgName: imgName}
-
-	PdfToImage(pi)
-}
-
-func PdfToImage(p Name) {
-
-	pdfName := p.PdfName
-	imgName := p.ImgName
+func PdfToImage(pdfName string, imgName string) {
 
 	doc, err := fitz.New(fmt.Sprintf("%s.pdf", pdfName))
 	if err != nil {
