@@ -17,7 +17,7 @@ func main() {
 	pdfName := os.Args[1]
 	imgName := os.Args[2]
 
-	doc, err := fitz.New(pdfName)
+	doc, err := fitz.New(fmt.Sprintf("%s.pdf", pdfName))
 	if err != nil {
 		panic(err)
 	}
