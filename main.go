@@ -43,16 +43,16 @@ func PdfToImage(p Name) {
 			panic(err)
 		}
 
-		f, err := os.Create(filepath.Join(fmt.Sprintf("%s%03d.jpg", imgName, n)))
+		f, err := os.Create(filepath.Join(fmt.Sprintf("%s.jpg", imgName)))
 		if err != nil {
 			panic(err)
 		}
+
+		defer f.Close()
 
 		err = jpeg.Encode(f, img, &jpeg.Options{Quality: jpeg.DefaultQuality})
 		if err != nil {
 			panic(err)
 		}
-
-		f.Close()
 	}
 }
