@@ -9,6 +9,11 @@ import (
 	"github.com/gen2brain/go-fitz"
 )
 
+type Name struct {
+	PdfName string
+	ImgName string
+}
+
 func main() {
 	if len(os.Args) != 3 {
 		panic("The number of arguments does not match.")
@@ -16,6 +21,16 @@ func main() {
 
 	pdfName := os.Args[1]
 	imgName := os.Args[2]
+
+	pi := Name{PdfName: pdfName, ImgName: imgName}
+
+	PdfToImage(pi)
+}
+
+func PdfToImage(p Name) {
+
+	pdfName := p.PdfName
+	imgName := p.ImgName
 
 	doc, err := fitz.New(fmt.Sprintf("%s.pdf", pdfName))
 	if err != nil {
