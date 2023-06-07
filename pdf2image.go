@@ -22,7 +22,7 @@ func PdfToImage(pdfName string, imgName string) {
 			panic(err)
 		}
 
-		f, err := os.Create(filepath.Join(fmt.Sprintf("%s.jpg", imgName)))
+		f, err := os.Create(filepath.Join(fmt.Sprintf("%s%d.jpg", imgName, n)))
 		if err != nil {
 			panic(err)
 		}

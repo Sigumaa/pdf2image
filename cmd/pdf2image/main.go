@@ -1,18 +1,24 @@
 package main
 
 import (
-	"os"
+	"flag"
+	"fmt"
+	"log"
 
 	"github.com/Sigumaa/pdf2image"
 )
 
 func main() {
-	if len(os.Args) != 3 {
-		panic("The number of arguments does not match.")
+	pdfName := flag.String("pdf", "", "PDF file name")
+	imgName := flag.String("img", "", "Image file name")
+	flag.Parse()
+
+	if *pdfName == "" || *imgName == "" {
+		flag.Usage()
+		log.Fatal("PDF file name or image file name is missing.")
 	}
 
-	pdfName := os.Args[1]
-	imgName := os.Args[2]
+	pdf2image.PdfToImage(*pdfName, *imgName)
 
-	pdf2image.PdfToImage(pdfName, imgName)
+	fmt.Println("Success!")
 }
