@@ -1,2 +1,4 @@
 github.com/gen2brain/go-fitz v1.22.2 h1:pisRYS3x/tvsiS4UzdBoiStmOxYoisOGNCUB4+0RKhE=
 github.com/gen2brain/go-fitz v1.22.2/go.mod h1:HU04vc+RisUh/kvEd2pB0LAxmK1oyXdN4ftyshUr9rQ=
+github.com/gen2brain/go-fitz v1.23.1 h1:x69/szWZXpI3jZ57mMqCg7WqqvtYnQG0lXts3L6M1Fc=
+github.com/gen2brain/go-fitz v1.23.1/go.mod h1:HU04vc+RisUh/kvEd2pB0LAxmK1oyXdN4ftyshUr9rQ=
